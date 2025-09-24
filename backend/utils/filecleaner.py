@@ -15,7 +15,7 @@ def extract_and_clean(path: str) -> str:
     text = re.sub(r'Page \d+', '', text, flags=re.IGNORECASE)
 
     # Step 4: strip weird symbols (keep letters, numbers, punctuation)
-    text = re.sub(r'[^a-zA-Z0-9.,;:!?()\[\]\s-]', '', text)
+    text = re.sub(r'[^a-zA-Z0-9.,;!?()\-–&%\'\s]', '', text)
 
     # Step 5: trim
     return text.strip()
